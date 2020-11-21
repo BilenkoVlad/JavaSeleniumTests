@@ -24,7 +24,5 @@ hs_err_pid*
 
 #InteliJ
 .idea
-
-*.iml
-
 target
+herokuApp.iml
