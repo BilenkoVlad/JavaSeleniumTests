@@ -49,7 +49,7 @@ public class BaseClass {
         driver.navigate().refresh();
     }
 
-    public void clickOnLink(By element){
+    public void clickOnLink(By element) {
         driver.findElement(element).click();
     }
 }

@@ -49,7 +49,7 @@ public class ContextMenuPage {
         }
     }
 
-    public void leftClickOnBox(){
+    public void leftClickOnBox() {
         driver.findElement(contextBox).click();
         assertFalse(alertIsPresent());
     }

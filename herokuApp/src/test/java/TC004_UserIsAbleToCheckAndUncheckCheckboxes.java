@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class TC004_UserIsAbleToCheckAndUncheckCheckboxes extends BaseClass{
+public class TC004_UserIsAbleToCheckAndUncheckCheckboxes extends BaseClass {
     @BeforeTest
     public void browserInitialize() throws IOException {
         driver = DriverInitialization();
@@ -15,7 +15,7 @@ public class TC004_UserIsAbleToCheckAndUncheckCheckboxes extends BaseClass{
     }
 
     @Test
-    public void UserIsAbleToCheckAndUncheckCheckboxesTest(){
+    public void UserIsAbleToCheckAndUncheckCheckboxesTest() {
         HomePage homePage = new HomePage(driver);
         homePage.getHomeUrl();
         clickOnLink(homePage.getCheckboxesLink());

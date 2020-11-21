@@ -13,7 +13,7 @@ public class TC008_UserIsAbleToSelectValueFromDropdownList extends BaseClass {
     }
 
     @Test
-    public void UserIsAbleToSelectValueFromDropdownListTest(){
+    public void UserIsAbleToSelectValueFromDropdownListTest() {
         HomePage homePage = new HomePage(driver);
         homePage.getHomeUrl();
         clickOnLink(homePage.getDropdownLink());

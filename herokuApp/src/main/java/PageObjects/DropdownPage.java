@@ -34,7 +34,7 @@ public class DropdownPage {
         return driver.findElements(dropdownOptions);
     }
 
-    private WebElement selectedOption(){
+    private WebElement selectedOption() {
         return driver.findElement(selectedOption);
     }
 
@@ -48,7 +48,7 @@ public class DropdownPage {
         }
     }
 
-    public void selectOptionFromDropDown(String value){
+    public void selectOptionFromDropDown(String value) {
         Select select = new Select(dropdown());
         select.selectByVisibleText(value);
         assertEquals(selectedOption().getText(), value);

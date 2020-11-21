@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class TC002_UserIsAbleToAuthorizeIntoAppByBasicAuth extends BaseClass{
+public class TC002_UserIsAbleToAuthorizeIntoAppByBasicAuth extends BaseClass {
     @BeforeTest
     public void browserInitialize() throws IOException {
         driver = DriverInitialization();
@@ -15,7 +15,7 @@ public class TC002_UserIsAbleToAuthorizeIntoAppByBasicAuth extends BaseClass{
     }
 
     @Test
-    public void BasicAuthValidLogin(){
+    public void BasicAuthValidLogin() {
         HomePage homePage = new HomePage(driver);
         homePage.getHomeUrl();
         clickOnLink(homePage.getBasicAuthLink());
@@ -26,7 +26,7 @@ public class TC002_UserIsAbleToAuthorizeIntoAppByBasicAuth extends BaseClass{
     }
 
     @Test
-    public void BasicAuthInvalidLogin(){
+    public void BasicAuthInvalidLogin() {
         HomePage homePage = new HomePage(driver);
         homePage.getHomeUrl();
         clickOnLink(homePage.getBasicAuthLink());
