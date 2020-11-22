@@ -18,7 +18,7 @@ public class TC005_UserShouldSeeAlertOnThePageAfterRightClickingOnSpecificArea e
     public void UserShouldSeeAlertOnThePageAfterRightClickingOnSpecificAreaTest() {
         HomePage homePage = new HomePage(driver);
         homePage.getHomeUrl();
-        clickOnLink(homePage.getContextMenuLink());
+        clickOnLink(homePage.getLinkByName("Context Menu"));
 
         ContextMenuPage contextMenuPage = new ContextMenuPage(driver);
         contextMenuPage.verifyDefaultContent();

@@ -1,12 +1,18 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Properties;
 
 /**
@@ -27,7 +33,20 @@ public class BaseClass {
 
         if (browser_name.equals("chrome")) {
             System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\drivers\\chromedriver.exe");
-            driver = new ChromeDriver();
+            String downloadFilepath = "C:\\Users\\vladyslav.bilenko\\Desktop\\My projects\\JavaSeleniumTests\\herokuApp\\src\\main\\resources\\downloads";
+            HashMap<String, Object> chromePreferences = new HashMap<String, Object>();
+            chromePreferences.put("profile.default_content_settings.popups", 0);
+            chromePreferences.put("download.default_directory", downloadFilepath);
+            chromePreferences.put("disable-popup-blocking", true);
+            chromePreferences.put("download.prompt_for_download", false);
+            chromePreferences.put("safebrowsing.enabled", true);
+
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.setExperimentalOption("prefs", chromePreferences);
+            chromeOptions.addArguments("--test-type");
+            chromeOptions.addArguments("--disable-extensions"); //to disable browser extension popup
+
+            driver = new ChromeDriver(chromeOptions);
             driver.manage().window().maximize();
         } else if (browser_name.equals("firefox")) {
             System.setProperty("webdriver.gecko.driver", "C:\\geckodriver\\geckodriver.exe");
@@ -47,6 +66,10 @@ public class BaseClass {
 
     public void refreshThePage() {
         driver.navigate().refresh();
+    }
+
+    public void navigateBackInPage() {
+        driver.navigate().back();
     }
 
     public void clickOnLink(By element) {

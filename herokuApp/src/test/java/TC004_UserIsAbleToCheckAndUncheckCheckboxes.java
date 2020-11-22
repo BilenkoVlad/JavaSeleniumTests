@@ -18,7 +18,7 @@ public class TC004_UserIsAbleToCheckAndUncheckCheckboxes extends BaseClass {
     public void UserIsAbleToCheckAndUncheckCheckboxesTest() {
         HomePage homePage = new HomePage(driver);
         homePage.getHomeUrl();
-        clickOnLink(homePage.getCheckboxesLink());
+        clickOnLink(homePage.getLinkByName("Checkboxes"));
 
         CheckboxesPage checkboxesPage = new CheckboxesPage(driver);
         checkboxesPage.verifyDefaultContent();

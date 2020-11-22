@@ -18,7 +18,7 @@ public class TC002_UserIsAbleToAuthorizeIntoAppByBasicAuth extends BaseClass {
     public void BasicAuthValidLogin() {
         HomePage homePage = new HomePage(driver);
         homePage.getHomeUrl();
-        clickOnLink(homePage.getBasicAuthLink());
+        clickOnLink(homePage.getLinkByName("Basic Auth"));
 
         BasicAuthPage basicAuthPage = new BasicAuthPage(driver);
         basicAuthPage.basicAuthWithCredentials(true);
@@ -29,7 +29,7 @@ public class TC002_UserIsAbleToAuthorizeIntoAppByBasicAuth extends BaseClass {
     public void BasicAuthInvalidLogin() {
         HomePage homePage = new HomePage(driver);
         homePage.getHomeUrl();
-        clickOnLink(homePage.getBasicAuthLink());
+        clickOnLink(homePage.getLinkByName("Basic Auth"));
 
         BasicAuthPage basicAuthPage = new BasicAuthPage(driver);
         basicAuthPage.basicAuthWithCredentials(false);

@@ -18,7 +18,7 @@ public class TC001_UserIsAbleToAddAndRemoveItems extends BaseClass {
     public void UserIsAbleToAddAndRemoveItemsTest() {
         HomePage homePage = new HomePage(driver);
         homePage.getHomeUrl();
-        clickOnLink(homePage.getAddRemoveElementsLink());
+        clickOnLink(homePage.getLinkByName("Add/Remove Elements"));
 
         AddRemoveElementsPage addRemoveElementsPage = new AddRemoveElementsPage(driver);
         addRemoveElementsPage.addButtonClick();

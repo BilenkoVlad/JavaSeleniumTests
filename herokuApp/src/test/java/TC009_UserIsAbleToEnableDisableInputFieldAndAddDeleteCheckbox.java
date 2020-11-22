@@ -16,7 +16,7 @@ public class TC009_UserIsAbleToEnableDisableInputFieldAndAddDeleteCheckbox exten
     public void UserIsAbleToEnableDisableInputFieldAndAddDeleteCheckboxTest() {
         HomePage homePage = new HomePage(driver);
         homePage.getHomeUrl();
-        clickOnLink(homePage.getDynamicControlsLink());
+        clickOnLink(homePage.getLinkByName("Dynamic Controls"));
 
         DynamicControlsPage dynamicControlsPage = new DynamicControlsPage(driver);
         dynamicControlsPage.verifyDefaultContent();

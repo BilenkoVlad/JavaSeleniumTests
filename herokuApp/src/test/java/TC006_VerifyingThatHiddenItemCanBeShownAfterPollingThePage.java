@@ -16,7 +16,7 @@ public class TC006_VerifyingThatHiddenItemCanBeShownAfterPollingThePage extends 
     public void VerifyingThatHiddenItemCanBeShownAfterPollingThePageTest() {
         HomePage homePage = new HomePage(driver);
         homePage.getHomeUrl();
-        clickOnLink(homePage.getDisappearingElementsLink());
+        clickOnLink(homePage.getLinkByName("Disappearing Elements"));
 
         DisappearingElementsPage disappearingElementsPage = new DisappearingElementsPage(driver);
         disappearingElementsPage.verifyDefaultContent();
